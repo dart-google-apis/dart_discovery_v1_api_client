@@ -226,7 +226,7 @@ class DirectoryListItemsIcons {
 class JsonSchema {
 
   /** A reference to another schema. The value of this property is the "id" of another schema. */
-  String $ref;
+  String _ref;
 
   /** If this is a schema for an object, this property is the schema for any additional properties with dynamic keys on this object. */
   JsonSchema additionalProperties;
@@ -285,7 +285,7 @@ class JsonSchema {
   /** Create new JsonSchema from JSON data */
   JsonSchema.fromJson(Map json) {
     if (json.containsKey("$ref")) {
-      $ref = json["$ref"];
+      _ref = json["$ref"];
     }
     if (json.containsKey("additionalProperties")) {
       additionalProperties = new JsonSchema.fromJson(json["additionalProperties"]);
@@ -353,8 +353,8 @@ class JsonSchema {
   Map toJson() {
     var output = new Map();
 
-    if ($ref != null) {
-      output["$ref"] = $ref;
+    if (_ref != null) {
+      output["$ref"] = _ref;
     }
     if (additionalProperties != null) {
       output["additionalProperties"] = additionalProperties.toJson();
@@ -774,14 +774,14 @@ class RestDescriptionIcons {
 
 }
 
-/** The resources in this API. */
-class RestDescriptionResources {
+/** API-level methods for this API. */
+class RestDescriptionMethods {
 
-  /** Create new RestDescriptionResources from JSON data */
-  RestDescriptionResources.fromJson(Map json) {
+  /** Create new RestDescriptionMethods from JSON data */
+  RestDescriptionMethods.fromJson(Map json) {
   }
 
-  /** Create JSON Object for RestDescriptionResources */
+  /** Create JSON Object for RestDescriptionMethods */
   Map toJson() {
     var output = new Map();
 
@@ -789,7 +789,7 @@ class RestDescriptionResources {
     return output;
   }
 
-  /** Return String representation of RestDescriptionResources */
+  /** Return String representation of RestDescriptionMethods */
   String toString() => JSON.stringify(this.toJson());
 
 }
@@ -872,26 +872,6 @@ class RestDescriptionAuthOauth2Scopes {
 
 }
 
-/** API-level methods for this API. */
-class RestDescriptionMethods {
-
-  /** Create new RestDescriptionMethods from JSON data */
-  RestDescriptionMethods.fromJson(Map json) {
-  }
-
-  /** Create JSON Object for RestDescriptionMethods */
-  Map toJson() {
-    var output = new Map();
-
-
-    return output;
-  }
-
-  /** Return String representation of RestDescriptionMethods */
-  String toString() => JSON.stringify(this.toJson());
-
-}
-
 /** Common parameters that apply across all apis. */
 class RestDescriptionParameters {
 
@@ -932,10 +912,33 @@ class RestDescriptionSchemas {
 
 }
 
+/** The resources in this API. */
+class RestDescriptionResources {
+
+  /** Create new RestDescriptionResources from JSON data */
+  RestDescriptionResources.fromJson(Map json) {
+  }
+
+  /** Create JSON Object for RestDescriptionResources */
+  Map toJson() {
+    var output = new Map();
+
+
+    return output;
+  }
+
+  /** Return String representation of RestDescriptionResources */
+  String toString() => JSON.stringify(this.toJson());
+
+}
+
 class RestMethod {
 
   /** Description of this method. */
   String description;
+
+  /** Whether this method requires an ETag to be specified. The ETag is sent as an HTTP If-Match or If-None-Match header. */
+  bool etagRequired;
 
   /** HTTP method used by this method. */
   String httpMethod;
@@ -977,6 +980,9 @@ class RestMethod {
   RestMethod.fromJson(Map json) {
     if (json.containsKey("description")) {
       description = json["description"];
+    }
+    if (json.containsKey("etagRequired")) {
+      etagRequired = json["etagRequired"];
     }
     if (json.containsKey("httpMethod")) {
       httpMethod = json["httpMethod"];
@@ -1028,6 +1034,9 @@ class RestMethod {
 
     if (description != null) {
       output["description"] = description;
+    }
+    if (etagRequired != null) {
+      output["etagRequired"] = etagRequired;
     }
     if (httpMethod != null) {
       output["httpMethod"] = httpMethod;
@@ -1251,12 +1260,12 @@ class RestMethodMediaUploadProtocolsResumable {
 class RestMethodRequest {
 
   /** Schema ID for the request schema. */
-  String $ref;
+  String _ref;
 
   /** Create new RestMethodRequest from JSON data */
   RestMethodRequest.fromJson(Map json) {
     if (json.containsKey("$ref")) {
-      $ref = json["$ref"];
+      _ref = json["$ref"];
     }
   }
 
@@ -1264,8 +1273,8 @@ class RestMethodRequest {
   Map toJson() {
     var output = new Map();
 
-    if ($ref != null) {
-      output["$ref"] = $ref;
+    if (_ref != null) {
+      output["$ref"] = _ref;
     }
 
     return output;
@@ -1300,12 +1309,12 @@ class RestMethodParameters {
 class RestMethodResponse {
 
   /** Schema ID for the response schema. */
-  String $ref;
+  String _ref;
 
   /** Create new RestMethodResponse from JSON data */
   RestMethodResponse.fromJson(Map json) {
     if (json.containsKey("$ref")) {
-      $ref = json["$ref"];
+      _ref = json["$ref"];
     }
   }
 
@@ -1313,8 +1322,8 @@ class RestMethodResponse {
   Map toJson() {
     var output = new Map();
 
-    if ($ref != null) {
-      output["$ref"] = $ref;
+    if (_ref != null) {
+      output["$ref"] = _ref;
     }
 
     return output;
