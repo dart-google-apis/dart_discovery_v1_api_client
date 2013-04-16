@@ -14,13 +14,13 @@ class ApisResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<RestDescription> getRest(String api, String version, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<RestDescription> getRest(core.String api, core.String version, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "apis/{api}/{version}/rest";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (api == null) paramErrors.add("api is required");
     if (api != null) urlParams["api"] = api;
     if (version == null) paramErrors.add("version is required");
@@ -62,13 +62,13 @@ class ApisResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<DirectoryList> list({String label, String name, bool preferred, Map optParams}) {
-    var completer = new Completer();
+  async.Future<DirectoryList> list({core.String label, core.String name, core.bool preferred, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "apis";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (label != null && !["deprecated", "graduated", "labs"].contains(label)) {
       paramErrors.add("Allowed values for label: deprecated, graduated, labs");
     }

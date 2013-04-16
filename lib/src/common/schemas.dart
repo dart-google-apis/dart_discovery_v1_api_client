@@ -3,16 +3,16 @@ part of discovery_v1_api_client;
 class DirectoryList {
 
   /** Indicate the version of the Discovery API used to generate this doc. */
-  String discoveryVersion;
+  core.String discoveryVersion;
 
   /** The individual directory entries. One entry per api/version pair. */
-  List<DirectoryListItems> items;
+  core.List<DirectoryListItems> items;
 
   /** The kind for this response. */
-  String kind;
+  core.String kind;
 
   /** Create new DirectoryList from JSON data */
-  DirectoryList.fromJson(Map json) {
+  DirectoryList.fromJson(core.Map json) {
     if (json.containsKey("discoveryVersion")) {
       discoveryVersion = json["discoveryVersion"];
     }
@@ -28,14 +28,14 @@ class DirectoryList {
   }
 
   /** Create JSON Object for DirectoryList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (discoveryVersion != null) {
       output["discoveryVersion"] = discoveryVersion;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -48,50 +48,50 @@ class DirectoryList {
   }
 
   /** Return String representation of DirectoryList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class DirectoryListItems {
 
   /** The description of this API. */
-  String description;
+  core.String description;
 
   /** A link to the discovery document. */
-  String discoveryLink;
+  core.String discoveryLink;
 
   /** The url for the discovery REST document. */
-  String discoveryRestUrl;
+  core.String discoveryRestUrl;
 
   /** A link to human readable documentation for the API. */
-  String documentationLink;
+  core.String documentationLink;
 
   /** Links to 16x16 and 32x32 icons representing the API. */
   DirectoryListItemsIcons icons;
 
   /** The id of this API. */
-  String id;
+  core.String id;
 
   /** The kind for this response. */
-  String kind;
+  core.String kind;
 
   /** Labels for the status of this API, such as labs or deprecated. */
-  List<String> labels;
+  core.List<core.String> labels;
 
   /** The name of the API. */
-  String name;
+  core.String name;
 
   /** True if this version is the preferred version to use. */
-  bool preferred;
+  core.bool preferred;
 
   /** The title of this API. */
-  String title;
+  core.String title;
 
   /** The version of the API. */
-  String version;
+  core.String version;
 
   /** Create new DirectoryListItems from JSON data */
-  DirectoryListItems.fromJson(Map json) {
+  DirectoryListItems.fromJson(core.Map json) {
     if (json.containsKey("description")) {
       description = json["description"];
     }
@@ -134,8 +134,8 @@ class DirectoryListItems {
   }
 
   /** Create JSON Object for DirectoryListItems */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (description != null) {
       output["description"] = description;
@@ -159,7 +159,7 @@ class DirectoryListItems {
       output["kind"] = kind;
     }
     if (labels != null) {
-      output["labels"] = new List();
+      output["labels"] = new core.List();
       labels.forEach((item) {
         output["labels"].add(item);
       });
@@ -181,7 +181,7 @@ class DirectoryListItems {
   }
 
   /** Return String representation of DirectoryListItems */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -189,13 +189,13 @@ class DirectoryListItems {
 class DirectoryListItemsIcons {
 
   /** The url of the 16x16 icon. */
-  String x16;
+  core.String x16;
 
   /** The url of the 32x32 icon. */
-  String x32;
+  core.String x32;
 
   /** Create new DirectoryListItemsIcons from JSON data */
-  DirectoryListItemsIcons.fromJson(Map json) {
+  DirectoryListItemsIcons.fromJson(core.Map json) {
     if (json.containsKey("x16")) {
       x16 = json["x16"];
     }
@@ -205,8 +205,8 @@ class DirectoryListItemsIcons {
   }
 
   /** Create JSON Object for DirectoryListItemsIcons */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (x16 != null) {
       output["x16"] = x16;
@@ -219,14 +219,14 @@ class DirectoryListItemsIcons {
   }
 
   /** Return String representation of DirectoryListItemsIcons */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class JsonSchema {
 
   /** A reference to another schema. The value of this property is the "id" of another schema. */
-  String _ref;
+  core.String _ref;
 
   /** If this is a schema for an object, this property is the schema for any additional properties with dynamic keys on this object. */
   JsonSchema additionalProperties;
@@ -235,55 +235,55 @@ class JsonSchema {
   JsonSchemaAnnotations annotations;
 
   /** The default value of this property (if one exists). */
-  String default;
+  core.String default;
 
   /** A description of this object. */
-  String description;
+  core.String description;
 
   /** Values this parameter may take (if it is an enum). */
-  List<String> enum;
+  core.List<core.String> enum;
 
   /** The descriptions for the enums. Each position maps to the corresponding value in the "enum" array. */
-  List<String> enumDescriptions;
+  core.List<core.String> enumDescriptions;
 
   /** An additional regular expression or key that helps constrain the value. For more details see: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.23 */
-  String format;
+  core.String format;
 
   /** Unique identifier for this schema. */
-  String id;
+  core.String id;
 
   /** If this is a schema for an array, this property is the schema for each element in the array. */
   JsonSchema items;
 
   /** Whether this parameter goes in the query or the path for REST requests. */
-  String location;
+  core.String location;
 
   /** The maximum value of this parameter. */
-  String maximum;
+  core.String maximum;
 
   /** The minimum value of this parameter. */
-  String minimum;
+  core.String minimum;
 
   /** The regular expression this parameter must conform to. Uses Java 6 regex format: http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html */
-  String pattern;
+  core.String pattern;
 
   /** If this is a schema for an object, list the schema for each property of this object. */
   JsonSchemaProperties properties;
 
   /** The value is read-only, generated by the service. The value can not be modified by the client. It the value is included in a POST, PUT or PATCH request, it will be ignored by the service. */
-  bool readOnly;
+  core.bool readOnly;
 
   /** Whether this parameter may appear multiple times. */
-  bool repeated;
+  core.bool repeated;
 
   /** Whether the parameter is required. */
-  bool required;
+  core.bool required;
 
   /** The value type for this schema. A list of values can be found here: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1 */
-  String type;
+  core.String type;
 
   /** Create new JsonSchema from JSON data */
-  JsonSchema.fromJson(Map json) {
+  JsonSchema.fromJson(core.Map json) {
     if (json.containsKey("$ref")) {
       _ref = json["$ref"];
     }
@@ -350,8 +350,8 @@ class JsonSchema {
   }
 
   /** Create JSON Object for JsonSchema */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (_ref != null) {
       output["$ref"] = _ref;
@@ -369,13 +369,13 @@ class JsonSchema {
       output["description"] = description;
     }
     if (enum != null) {
-      output["enum"] = new List();
+      output["enum"] = new core.List();
       enum.forEach((item) {
         output["enum"].add(item);
       });
     }
     if (enumDescriptions != null) {
-      output["enumDescriptions"] = new List();
+      output["enumDescriptions"] = new core.List();
       enumDescriptions.forEach((item) {
         output["enumDescriptions"].add(item);
       });
@@ -421,7 +421,7 @@ class JsonSchema {
   }
 
   /** Return String representation of JsonSchema */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -429,10 +429,10 @@ class JsonSchema {
 class JsonSchemaAnnotations {
 
   /** A list of methods for which this property is required on requests. */
-  List<String> required;
+  core.List<core.String> required;
 
   /** Create new JsonSchemaAnnotations from JSON data */
-  JsonSchemaAnnotations.fromJson(Map json) {
+  JsonSchemaAnnotations.fromJson(core.Map json) {
     if (json.containsKey("required")) {
       required = [];
       json["required"].forEach((item) {
@@ -442,11 +442,11 @@ class JsonSchemaAnnotations {
   }
 
   /** Create JSON Object for JsonSchemaAnnotations */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (required != null) {
-      output["required"] = new List();
+      output["required"] = new core.List();
       required.forEach((item) {
         output["required"].add(item);
       });
@@ -456,7 +456,7 @@ class JsonSchemaAnnotations {
   }
 
   /** Return String representation of JsonSchemaAnnotations */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -464,19 +464,19 @@ class JsonSchemaAnnotations {
 class JsonSchemaProperties {
 
   /** Create new JsonSchemaProperties from JSON data */
-  JsonSchemaProperties.fromJson(Map json) {
+  JsonSchemaProperties.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for JsonSchemaProperties */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of JsonSchemaProperties */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -486,79 +486,79 @@ class RestDescription {
   RestDescriptionAuth auth;
 
   /** [DEPRECATED] The base path for REST requests. */
-  String basePath;
+  core.String basePath;
 
   /** [DEPRECATED] The base URL for REST requests. */
-  String baseUrl;
+  core.String baseUrl;
 
   /** The path for REST batch requests. */
-  String batchPath;
+  core.String batchPath;
 
   /** Indicates how the API name should be capitalized and split into various parts. Useful for generating pretty class names. */
-  String canonicalName;
+  core.String canonicalName;
 
   /** The description of this API. */
-  String description;
+  core.String description;
 
   /** Indicate the version of the Discovery API used to generate this doc. */
-  String discoveryVersion;
+  core.String discoveryVersion;
 
   /** A link to human readable documentation for the API. */
-  String documentationLink;
+  core.String documentationLink;
 
   /** The etag for this response. */
-  String etag;
+  core.String etag;
 
   /** A list of supported features for this API. */
-  List<String> features;
+  core.List<core.String> features;
 
   /** Links to 16x16 and 32x32 icons representing the API. */
   RestDescriptionIcons icons;
 
   /** The id of this API. */
-  String id;
+  core.String id;
 
   /** The kind for this response. */
-  String kind;
+  core.String kind;
 
   /** Labels for the status of this API, such as labs or deprecated. */
-  List<String> labels;
+  core.List<core.String> labels;
 
   /** API-level methods for this API. */
   RestDescriptionMethods methods;
 
   /** The name of this API. */
-  String name;
+  core.String name;
 
   /** Common parameters that apply across all apis. */
   RestDescriptionParameters parameters;
 
   /** The protocol described by this document. */
-  String protocol;
+  core.String protocol;
 
   /** The resources in this API. */
   RestDescriptionResources resources;
 
   /** The version of this API. */
-  String revision;
+  core.String revision;
 
   /** The root url under which all API services live. */
-  String rootUrl;
+  core.String rootUrl;
 
   /** The schemas for this API. */
   RestDescriptionSchemas schemas;
 
   /** The base path for all REST requests. */
-  String servicePath;
+  core.String servicePath;
 
   /** The title of this API. */
-  String title;
+  core.String title;
 
   /** The version of this API. */
-  String version;
+  core.String version;
 
   /** Create new RestDescription from JSON data */
-  RestDescription.fromJson(Map json) {
+  RestDescription.fromJson(core.Map json) {
     if (json.containsKey("auth")) {
       auth = new RestDescriptionAuth.fromJson(json["auth"]);
     }
@@ -643,8 +643,8 @@ class RestDescription {
   }
 
   /** Create JSON Object for RestDescription */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (auth != null) {
       output["auth"] = auth.toJson();
@@ -674,7 +674,7 @@ class RestDescription {
       output["etag"] = etag;
     }
     if (features != null) {
-      output["features"] = new List();
+      output["features"] = new core.List();
       features.forEach((item) {
         output["features"].add(item);
       });
@@ -689,7 +689,7 @@ class RestDescription {
       output["kind"] = kind;
     }
     if (labels != null) {
-      output["labels"] = new List();
+      output["labels"] = new core.List();
       labels.forEach((item) {
         output["labels"].add(item);
       });
@@ -732,7 +732,7 @@ class RestDescription {
   }
 
   /** Return String representation of RestDescription */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -740,13 +740,13 @@ class RestDescription {
 class RestDescriptionIcons {
 
   /** The url of the 16x16 icon. */
-  String x16;
+  core.String x16;
 
   /** The url of the 32x32 icon. */
-  String x32;
+  core.String x32;
 
   /** Create new RestDescriptionIcons from JSON data */
-  RestDescriptionIcons.fromJson(Map json) {
+  RestDescriptionIcons.fromJson(core.Map json) {
     if (json.containsKey("x16")) {
       x16 = json["x16"];
     }
@@ -756,8 +756,8 @@ class RestDescriptionIcons {
   }
 
   /** Create JSON Object for RestDescriptionIcons */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (x16 != null) {
       output["x16"] = x16;
@@ -770,7 +770,7 @@ class RestDescriptionIcons {
   }
 
   /** Return String representation of RestDescriptionIcons */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -778,19 +778,19 @@ class RestDescriptionIcons {
 class RestDescriptionMethods {
 
   /** Create new RestDescriptionMethods from JSON data */
-  RestDescriptionMethods.fromJson(Map json) {
+  RestDescriptionMethods.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for RestDescriptionMethods */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of RestDescriptionMethods */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -801,15 +801,15 @@ class RestDescriptionAuth {
   RestDescriptionAuthOauth2 oauth2;
 
   /** Create new RestDescriptionAuth from JSON data */
-  RestDescriptionAuth.fromJson(Map json) {
+  RestDescriptionAuth.fromJson(core.Map json) {
     if (json.containsKey("oauth2")) {
       oauth2 = new RestDescriptionAuthOauth2.fromJson(json["oauth2"]);
     }
   }
 
   /** Create JSON Object for RestDescriptionAuth */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (oauth2 != null) {
       output["oauth2"] = oauth2.toJson();
@@ -819,7 +819,7 @@ class RestDescriptionAuth {
   }
 
   /** Return String representation of RestDescriptionAuth */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -830,15 +830,15 @@ class RestDescriptionAuthOauth2 {
   RestDescriptionAuthOauth2Scopes scopes;
 
   /** Create new RestDescriptionAuthOauth2 from JSON data */
-  RestDescriptionAuthOauth2.fromJson(Map json) {
+  RestDescriptionAuthOauth2.fromJson(core.Map json) {
     if (json.containsKey("scopes")) {
       scopes = new RestDescriptionAuthOauth2Scopes.fromJson(json["scopes"]);
     }
   }
 
   /** Create JSON Object for RestDescriptionAuthOauth2 */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (scopes != null) {
       output["scopes"] = scopes.toJson();
@@ -848,7 +848,7 @@ class RestDescriptionAuthOauth2 {
   }
 
   /** Return String representation of RestDescriptionAuthOauth2 */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -856,19 +856,19 @@ class RestDescriptionAuthOauth2 {
 class RestDescriptionAuthOauth2Scopes {
 
   /** Create new RestDescriptionAuthOauth2Scopes from JSON data */
-  RestDescriptionAuthOauth2Scopes.fromJson(Map json) {
+  RestDescriptionAuthOauth2Scopes.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for RestDescriptionAuthOauth2Scopes */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of RestDescriptionAuthOauth2Scopes */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -876,19 +876,19 @@ class RestDescriptionAuthOauth2Scopes {
 class RestDescriptionParameters {
 
   /** Create new RestDescriptionParameters from JSON data */
-  RestDescriptionParameters.fromJson(Map json) {
+  RestDescriptionParameters.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for RestDescriptionParameters */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of RestDescriptionParameters */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -896,19 +896,19 @@ class RestDescriptionParameters {
 class RestDescriptionSchemas {
 
   /** Create new RestDescriptionSchemas from JSON data */
-  RestDescriptionSchemas.fromJson(Map json) {
+  RestDescriptionSchemas.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for RestDescriptionSchemas */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of RestDescriptionSchemas */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -916,47 +916,47 @@ class RestDescriptionSchemas {
 class RestDescriptionResources {
 
   /** Create new RestDescriptionResources from JSON data */
-  RestDescriptionResources.fromJson(Map json) {
+  RestDescriptionResources.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for RestDescriptionResources */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of RestDescriptionResources */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class RestMethod {
 
   /** Description of this method. */
-  String description;
+  core.String description;
 
   /** Whether this method requires an ETag to be specified. The ETag is sent as an HTTP If-Match or If-None-Match header. */
-  bool etagRequired;
+  core.bool etagRequired;
 
   /** HTTP method used by this method. */
-  String httpMethod;
+  core.String httpMethod;
 
   /** A unique ID for this method. This property can be used to match methods between different versions of Discovery. */
-  String id;
+  core.String id;
 
   /** Media upload parameters. */
   RestMethodMediaUpload mediaUpload;
 
   /** Ordered list of required parameters, serves as a hint to clients on how to structure their method signatures. The array is ordered such that the "most-significant" parameter appears first. */
-  List<String> parameterOrder;
+  core.List<core.String> parameterOrder;
 
   /** Details for all parameters in this method. */
   RestMethodParameters parameters;
 
   /** The URI path of this REST method. Should be used in conjunction with the basePath property at the api-level. */
-  String path;
+  core.String path;
 
   /** The schema for the request. */
   RestMethodRequest request;
@@ -965,19 +965,19 @@ class RestMethod {
   RestMethodResponse response;
 
   /** OAuth 2.0 scopes applicable to this method. */
-  List<String> scopes;
+  core.List<core.String> scopes;
 
   /** Whether this method supports media downloads. */
-  bool supportsMediaDownload;
+  core.bool supportsMediaDownload;
 
   /** Whether this method supports media uploads. */
-  bool supportsMediaUpload;
+  core.bool supportsMediaUpload;
 
   /** Whether this method supports subscriptions. */
-  bool supportsSubscription;
+  core.bool supportsSubscription;
 
   /** Create new RestMethod from JSON data */
-  RestMethod.fromJson(Map json) {
+  RestMethod.fromJson(core.Map json) {
     if (json.containsKey("description")) {
       description = json["description"];
     }
@@ -1029,8 +1029,8 @@ class RestMethod {
   }
 
   /** Create JSON Object for RestMethod */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (description != null) {
       output["description"] = description;
@@ -1048,7 +1048,7 @@ class RestMethod {
       output["mediaUpload"] = mediaUpload.toJson();
     }
     if (parameterOrder != null) {
-      output["parameterOrder"] = new List();
+      output["parameterOrder"] = new core.List();
       parameterOrder.forEach((item) {
         output["parameterOrder"].add(item);
       });
@@ -1066,7 +1066,7 @@ class RestMethod {
       output["response"] = response.toJson();
     }
     if (scopes != null) {
-      output["scopes"] = new List();
+      output["scopes"] = new core.List();
       scopes.forEach((item) {
         output["scopes"].add(item);
       });
@@ -1085,7 +1085,7 @@ class RestMethod {
   }
 
   /** Return String representation of RestMethod */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1093,16 +1093,16 @@ class RestMethod {
 class RestMethodMediaUpload {
 
   /** MIME Media Ranges for acceptable media uploads to this method. */
-  List<String> accept;
+  core.List<core.String> accept;
 
   /** Maximum size of a media upload, such as "1MB", "2GB" or "3TB". */
-  String maxSize;
+  core.String maxSize;
 
   /** Supported upload protocols. */
   RestMethodMediaUploadProtocols protocols;
 
   /** Create new RestMethodMediaUpload from JSON data */
-  RestMethodMediaUpload.fromJson(Map json) {
+  RestMethodMediaUpload.fromJson(core.Map json) {
     if (json.containsKey("accept")) {
       accept = [];
       json["accept"].forEach((item) {
@@ -1118,11 +1118,11 @@ class RestMethodMediaUpload {
   }
 
   /** Create JSON Object for RestMethodMediaUpload */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (accept != null) {
-      output["accept"] = new List();
+      output["accept"] = new core.List();
       accept.forEach((item) {
         output["accept"].add(item);
       });
@@ -1138,7 +1138,7 @@ class RestMethodMediaUpload {
   }
 
   /** Return String representation of RestMethodMediaUpload */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1152,7 +1152,7 @@ class RestMethodMediaUploadProtocols {
   RestMethodMediaUploadProtocolsSimple simple;
 
   /** Create new RestMethodMediaUploadProtocols from JSON data */
-  RestMethodMediaUploadProtocols.fromJson(Map json) {
+  RestMethodMediaUploadProtocols.fromJson(core.Map json) {
     if (json.containsKey("resumable")) {
       resumable = new RestMethodMediaUploadProtocolsResumable.fromJson(json["resumable"]);
     }
@@ -1162,8 +1162,8 @@ class RestMethodMediaUploadProtocols {
   }
 
   /** Create JSON Object for RestMethodMediaUploadProtocols */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (resumable != null) {
       output["resumable"] = resumable.toJson();
@@ -1176,7 +1176,7 @@ class RestMethodMediaUploadProtocols {
   }
 
   /** Return String representation of RestMethodMediaUploadProtocols */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1184,13 +1184,13 @@ class RestMethodMediaUploadProtocols {
 class RestMethodMediaUploadProtocolsSimple {
 
   /** True if this endpoint supports upload multipart media. */
-  bool multipart;
+  core.bool multipart;
 
   /** The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level. */
-  String path;
+  core.String path;
 
   /** Create new RestMethodMediaUploadProtocolsSimple from JSON data */
-  RestMethodMediaUploadProtocolsSimple.fromJson(Map json) {
+  RestMethodMediaUploadProtocolsSimple.fromJson(core.Map json) {
     if (json.containsKey("multipart")) {
       multipart = json["multipart"];
     }
@@ -1200,8 +1200,8 @@ class RestMethodMediaUploadProtocolsSimple {
   }
 
   /** Create JSON Object for RestMethodMediaUploadProtocolsSimple */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (multipart != null) {
       output["multipart"] = multipart;
@@ -1214,7 +1214,7 @@ class RestMethodMediaUploadProtocolsSimple {
   }
 
   /** Return String representation of RestMethodMediaUploadProtocolsSimple */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1222,13 +1222,13 @@ class RestMethodMediaUploadProtocolsSimple {
 class RestMethodMediaUploadProtocolsResumable {
 
   /** True if this endpoint supports uploading multipart media. */
-  bool multipart;
+  core.bool multipart;
 
   /** The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level. */
-  String path;
+  core.String path;
 
   /** Create new RestMethodMediaUploadProtocolsResumable from JSON data */
-  RestMethodMediaUploadProtocolsResumable.fromJson(Map json) {
+  RestMethodMediaUploadProtocolsResumable.fromJson(core.Map json) {
     if (json.containsKey("multipart")) {
       multipart = json["multipart"];
     }
@@ -1238,8 +1238,8 @@ class RestMethodMediaUploadProtocolsResumable {
   }
 
   /** Create JSON Object for RestMethodMediaUploadProtocolsResumable */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (multipart != null) {
       output["multipart"] = multipart;
@@ -1252,7 +1252,7 @@ class RestMethodMediaUploadProtocolsResumable {
   }
 
   /** Return String representation of RestMethodMediaUploadProtocolsResumable */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1260,18 +1260,18 @@ class RestMethodMediaUploadProtocolsResumable {
 class RestMethodRequest {
 
   /** Schema ID for the request schema. */
-  String _ref;
+  core.String _ref;
 
   /** Create new RestMethodRequest from JSON data */
-  RestMethodRequest.fromJson(Map json) {
+  RestMethodRequest.fromJson(core.Map json) {
     if (json.containsKey("$ref")) {
       _ref = json["$ref"];
     }
   }
 
   /** Create JSON Object for RestMethodRequest */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (_ref != null) {
       output["$ref"] = _ref;
@@ -1281,7 +1281,7 @@ class RestMethodRequest {
   }
 
   /** Return String representation of RestMethodRequest */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1289,19 +1289,19 @@ class RestMethodRequest {
 class RestMethodParameters {
 
   /** Create new RestMethodParameters from JSON data */
-  RestMethodParameters.fromJson(Map json) {
+  RestMethodParameters.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for RestMethodParameters */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of RestMethodParameters */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1309,18 +1309,18 @@ class RestMethodParameters {
 class RestMethodResponse {
 
   /** Schema ID for the response schema. */
-  String _ref;
+  core.String _ref;
 
   /** Create new RestMethodResponse from JSON data */
-  RestMethodResponse.fromJson(Map json) {
+  RestMethodResponse.fromJson(core.Map json) {
     if (json.containsKey("$ref")) {
       _ref = json["$ref"];
     }
   }
 
   /** Create JSON Object for RestMethodResponse */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (_ref != null) {
       output["$ref"] = _ref;
@@ -1330,7 +1330,7 @@ class RestMethodResponse {
   }
 
   /** Return String representation of RestMethodResponse */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1343,7 +1343,7 @@ class RestResource {
   RestResourceResources resources;
 
   /** Create new RestResource from JSON data */
-  RestResource.fromJson(Map json) {
+  RestResource.fromJson(core.Map json) {
     if (json.containsKey("methods")) {
       methods = new RestResourceMethods.fromJson(json["methods"]);
     }
@@ -1353,8 +1353,8 @@ class RestResource {
   }
 
   /** Create JSON Object for RestResource */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (methods != null) {
       output["methods"] = methods.toJson();
@@ -1367,7 +1367,7 @@ class RestResource {
   }
 
   /** Return String representation of RestResource */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1375,19 +1375,19 @@ class RestResource {
 class RestResourceResources {
 
   /** Create new RestResourceResources from JSON data */
-  RestResourceResources.fromJson(Map json) {
+  RestResourceResources.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for RestResourceResources */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of RestResourceResources */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1395,19 +1395,19 @@ class RestResourceResources {
 class RestResourceMethods {
 
   /** Create new RestResourceMethods from JSON data */
-  RestResourceMethods.fromJson(Map json) {
+  RestResourceMethods.fromJson(core.Map json) {
   }
 
   /** Create JSON Object for RestResourceMethods */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
 
     return output;
   }
 
   /** Return String representation of RestResourceMethods */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
