@@ -4,8 +4,8 @@ part of discovery_v1_api_console;
 /** Lets you discover information about other Google APIs, such as what APIs are available, the resource and method details for each API */
 class Discovery extends ConsoleClient {
 
-  ApisResource _apis;
-  ApisResource get apis => _apis;
+  ApisResource_ _apis;
+  ApisResource_ get apis => _apis;
 
   /**
    * Data format for the response.
@@ -59,6 +59,6 @@ class Discovery extends ConsoleClient {
   Discovery([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/discovery/v1/";
     rootUrl = "https://www.googleapis.com:443/";
-    _apis = new ApisResource(this);
+    _apis = new ApisResource_(this);
   }
 }

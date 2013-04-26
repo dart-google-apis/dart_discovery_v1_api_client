@@ -1,8 +1,8 @@
 part of discovery_v1_api_client;
 
-class ApisResource extends Resource {
+class ApisResource_ extends Resource {
 
-  ApisResource(Client client) : super(client) {
+  ApisResource_(Client client) : super(client) {
   }
 
   /**
@@ -34,7 +34,7 @@ class ApisResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -84,7 +84,7 @@ class ApisResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 

@@ -235,13 +235,13 @@ class JsonSchema {
   JsonSchemaAnnotations annotations;
 
   /** The default value of this property (if one exists). */
-  core.String default;
+  core.String defaultProperty;
 
   /** A description of this object. */
   core.String description;
 
   /** Values this parameter may take (if it is an enum). */
-  core.List<core.String> enum;
+  core.List<core.String> enumProperty;
 
   /** The descriptions for the enums. Each position maps to the corresponding value in the "enum" array. */
   core.List<core.String> enumDescriptions;
@@ -284,8 +284,8 @@ class JsonSchema {
 
   /** Create new JsonSchema from JSON data */
   JsonSchema.fromJson(core.Map json) {
-    if (json.containsKey("$ref")) {
-      _ref = json["$ref"];
+    if (json.containsKey("\$ref")) {
+      _ref = json["\$ref"];
     }
     if (json.containsKey("additionalProperties")) {
       additionalProperties = new JsonSchema.fromJson(json["additionalProperties"]);
@@ -294,15 +294,15 @@ class JsonSchema {
       annotations = new JsonSchemaAnnotations.fromJson(json["annotations"]);
     }
     if (json.containsKey("default")) {
-      default = json["default"];
+      defaultProperty = json["default"];
     }
     if (json.containsKey("description")) {
       description = json["description"];
     }
     if (json.containsKey("enum")) {
-      enum = [];
+      enumProperty = [];
       json["enum"].forEach((item) {
-        enum.add(item);
+        enumProperty.add(item);
       });
     }
     if (json.containsKey("enumDescriptions")) {
@@ -354,7 +354,7 @@ class JsonSchema {
     var output = new core.Map();
 
     if (_ref != null) {
-      output["$ref"] = _ref;
+      output["\$ref"] = _ref;
     }
     if (additionalProperties != null) {
       output["additionalProperties"] = additionalProperties.toJson();
@@ -362,15 +362,15 @@ class JsonSchema {
     if (annotations != null) {
       output["annotations"] = annotations.toJson();
     }
-    if (default != null) {
-      output["default"] = default;
+    if (defaultProperty != null) {
+      output["default"] = defaultProperty;
     }
     if (description != null) {
       output["description"] = description;
     }
-    if (enum != null) {
+    if (enumProperty != null) {
       output["enum"] = new core.List();
-      enum.forEach((item) {
+      enumProperty.forEach((item) {
         output["enum"].add(item);
       });
     }
@@ -1264,8 +1264,8 @@ class RestMethodRequest {
 
   /** Create new RestMethodRequest from JSON data */
   RestMethodRequest.fromJson(core.Map json) {
-    if (json.containsKey("$ref")) {
-      _ref = json["$ref"];
+    if (json.containsKey("\$ref")) {
+      _ref = json["\$ref"];
     }
   }
 
@@ -1274,7 +1274,7 @@ class RestMethodRequest {
     var output = new core.Map();
 
     if (_ref != null) {
-      output["$ref"] = _ref;
+      output["\$ref"] = _ref;
     }
 
     return output;
@@ -1313,8 +1313,8 @@ class RestMethodResponse {
 
   /** Create new RestMethodResponse from JSON data */
   RestMethodResponse.fromJson(core.Map json) {
-    if (json.containsKey("$ref")) {
-      _ref = json["$ref"];
+    if (json.containsKey("\$ref")) {
+      _ref = json["\$ref"];
     }
   }
 
@@ -1323,7 +1323,7 @@ class RestMethodResponse {
     var output = new core.Map();
 
     if (_ref != null) {
-      output["$ref"] = _ref;
+      output["\$ref"] = _ref;
     }
 
     return output;
