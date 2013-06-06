@@ -6,7 +6,7 @@ Auto-generated client library for accessing the discovery v1 API.
 
 #### ![Logo](http://www.google.com/images/icons/feature/filing_cabinet_search-g16.png) APIs Discovery Service - discovery v1
 
-Lets you discover information about other Google APIs, such as what APIs are available, the resource and method details for each API
+Lets you discover information about other Google APIs, such as what APIs are available, the resource and method details for each API.
 
 Official API documentation: https://developers.google.com/discovery/
 

@@ -49,12 +49,6 @@ class ApisResource_ extends Resource {
   /**
    * Retrieve the list of APIs supported at this endpoint.
    *
-   * [label] - Only include APIs with a matching label, such as 'graduated' or 'labs'.
-   *   Allowed values:
-   *     deprecated - APIs that have been deprecated.
-   *     graduated - Supported APIs that have graduated from labs.
-   *     labs - APIs that are experimental
-   *
    * [name] - Only include APIs with the given name.
    *
    * [preferred] - Return only the preferred version of an API.
@@ -62,17 +56,13 @@ class ApisResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<DirectoryList> list({core.String label, core.String name, core.bool preferred, core.Map optParams}) {
+  async.Future<DirectoryList> list({core.String name, core.bool preferred, core.Map optParams}) {
     var completer = new async.Completer();
     var url = "apis";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
 
     var paramErrors = new core.List();
-    if (label != null && !["deprecated", "graduated", "labs"].contains(label)) {
-      paramErrors.add("Allowed values for label: deprecated, graduated, labs");
-    }
-    if (label != null) queryParams["label"] = label;
     if (name != null) queryParams["name"] = name;
     if (preferred != null) queryParams["preferred"] = preferred;
     if (optParams != null) {

@@ -1,7 +1,7 @@
 part of discovery_v1_api_browser;
 
 /** Client to access the discovery v1 API */
-/** Lets you discover information about other Google APIs, such as what APIs are available, the resource and method details for each API */
+/** Lets you discover information about other Google APIs, such as what APIs are available, the resource and method details for each API. */
 class Discovery extends BrowserClient {
 
   ApisResource_ _apis;
@@ -58,7 +58,7 @@ class Discovery extends BrowserClient {
 
   Discovery([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/discovery/v1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _apis = new ApisResource_(this);
   }
 }
