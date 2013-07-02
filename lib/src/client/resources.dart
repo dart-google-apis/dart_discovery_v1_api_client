@@ -15,7 +15,6 @@ class ApisResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<RestDescription> getRest(core.String api, core.String version, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "apis/{api}/{version}/rest";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -34,16 +33,13 @@ class ApisResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new RestDescription.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new RestDescription.fromJson(data));
   }
 
   /**
@@ -57,7 +53,6 @@ class ApisResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<DirectoryList> list({core.String name, core.bool preferred, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "apis";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -74,16 +69,13 @@ class ApisResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new DirectoryList.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new DirectoryList.fromJson(data));
   }
 }
 
