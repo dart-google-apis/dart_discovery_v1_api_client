@@ -1,14 +1,15 @@
-library discovery_v1_api_console;
+library discovery_v1_api.console;
 
-import "discovery_v1_api_client.dart";
-export "discovery_v1_api_client.dart";
-
-import "dart:core" as core;
-import "dart:io" as io;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:http/http.dart" as http;
 import "package:google_oauth2_client/google_oauth2_console.dart" as oauth2;
 
-part "src/console/console_client.dart";
-part "src/console/discovery.dart";
+import 'package:google_discovery_v1_api/src/cloud_api_console.dart';
+
+import "package:google_discovery_v1_api/discovery_v1_api_client.dart";
+
+/** Lets you discover information about other Google APIs, such as what APIs are available, the resource and method details for each API. */
+class Discovery extends Client with ConsoleClient {
+
+  final oauth2.OAuth2Console auth;
+
+  Discovery([oauth2.OAuth2Console this.auth]);
+}

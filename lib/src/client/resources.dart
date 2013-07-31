@@ -1,9 +1,11 @@
-part of discovery_v1_api_client;
+part of discovery_v1_api;
 
-class ApisResource_ extends Resource {
+class ApisResource_ {
 
-  ApisResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ApisResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieve the description of a particular version of an api.

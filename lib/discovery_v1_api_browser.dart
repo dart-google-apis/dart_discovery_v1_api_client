@@ -1,14 +1,14 @@
-library discovery_v1_api_browser;
+library discovery_v1_api.browser;
 
-import "discovery_v1_api_client.dart";
-export "discovery_v1_api_client.dart";
-
-import "dart:core" as core;
-import "dart:html" as html;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:js/js.dart" as js;
 import "package:google_oauth2_client/google_oauth2_browser.dart" as oauth;
 
-part "src/browser/browser_client.dart";
-part "src/browser/discovery.dart";
+import 'package:google_discovery_v1_api/src/cloud_api_browser.dart';
+import "package:google_discovery_v1_api/discovery_v1_api_client.dart";
+
+/** Lets you discover information about other Google APIs, such as what APIs are available, the resource and method details for each API. */
+class Discovery extends Client with BrowserClient {
+
+  final oauth.OAuth2 auth;
+
+  Discovery([oauth.OAuth2 this.auth]);
+}
