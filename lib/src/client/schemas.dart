@@ -42,7 +42,7 @@ class DirectoryList {
   }
 
   /** Return String representation of DirectoryList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -169,7 +169,7 @@ class DirectoryListItems {
   }
 
   /** Return String representation of DirectoryListItems */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -207,7 +207,7 @@ class DirectoryListItemsIcons {
   }
 
   /** Return String representation of DirectoryListItemsIcons */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -397,7 +397,7 @@ class JsonSchema {
   }
 
   /** Return String representation of JsonSchema */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -426,7 +426,7 @@ class JsonSchemaAnnotations {
   }
 
   /** Return String representation of JsonSchemaAnnotations */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -697,7 +697,7 @@ class RestDescription {
   }
 
   /** Return String representation of RestDescription */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -726,7 +726,7 @@ class RestDescriptionAuth {
   }
 
   /** Return String representation of RestDescriptionAuth */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -755,7 +755,7 @@ class RestDescriptionAuthOauth2 {
   }
 
   /** Return String representation of RestDescriptionAuthOauth2 */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -784,7 +784,7 @@ class RestDescriptionAuthOauth2Scopes {
   }
 
   /** Return String representation of RestDescriptionAuthOauth2Scopes */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -822,7 +822,7 @@ class RestDescriptionIcons {
   }
 
   /** Return String representation of RestDescriptionIcons */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -967,7 +967,7 @@ class RestMethod {
   }
 
   /** Return String representation of RestMethod */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1014,7 +1014,7 @@ class RestMethodMediaUpload {
   }
 
   /** Return String representation of RestMethodMediaUpload */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1052,7 +1052,7 @@ class RestMethodMediaUploadProtocols {
   }
 
   /** Return String representation of RestMethodMediaUploadProtocols */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1090,7 +1090,7 @@ class RestMethodMediaUploadProtocolsResumable {
   }
 
   /** Return String representation of RestMethodMediaUploadProtocolsResumable */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1128,7 +1128,7 @@ class RestMethodMediaUploadProtocolsSimple {
   }
 
   /** Return String representation of RestMethodMediaUploadProtocolsSimple */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1166,7 +1166,7 @@ class RestMethodRequest {
   }
 
   /** Return String representation of RestMethodRequest */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1195,7 +1195,7 @@ class RestMethodResponse {
   }
 
   /** Return String representation of RestMethodResponse */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1232,7 +1232,7 @@ class RestResource {
   }
 
   /** Return String representation of RestResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
