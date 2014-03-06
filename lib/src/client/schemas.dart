@@ -270,6 +270,9 @@ class JsonSchema {
   /** The value type for this schema. A list of values can be found here: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1 */
   core.String type;
 
+  /** In a variant data type, the value of one property is used to determine how to interpret the entire entity. Its value must exist in a map of descriminant values to schema names. */
+  JsonSchemaVariant variant;
+
   /** Create new JsonSchema from JSON data */
   JsonSchema.fromJson(core.Map json) {
     if (json.containsKey("\$ref")) {
@@ -328,6 +331,9 @@ class JsonSchema {
     }
     if (json.containsKey("type")) {
       type = json["type"];
+    }
+    if (json.containsKey("variant")) {
+      variant = new JsonSchemaVariant.fromJson(json["variant"]);
     }
   }
 
@@ -392,6 +398,9 @@ class JsonSchema {
     if (type != null) {
       output["type"] = type;
     }
+    if (variant != null) {
+      output["variant"] = variant.toJson();
+    }
 
     return output;
   }
@@ -426,6 +435,79 @@ class JsonSchemaAnnotations {
   }
 
   /** Return String representation of JsonSchemaAnnotations */
+  core.String toString() => JSON.encode(this.toJson());
+
+}
+
+/** In a variant data type, the value of one property is used to determine how to interpret the entire entity. Its value must exist in a map of descriminant values to schema names. */
+class JsonSchemaVariant {
+
+  /** The name of the type discriminant property. */
+  core.String discriminant;
+
+  /** The map of discriminant value to schema to use for parsing.. */
+  core.List<JsonSchemaVariantMap> map;
+
+  /** Create new JsonSchemaVariant from JSON data */
+  JsonSchemaVariant.fromJson(core.Map json) {
+    if (json.containsKey("discriminant")) {
+      discriminant = json["discriminant"];
+    }
+    if (json.containsKey("map")) {
+      map = json["map"].map((mapItem) => new JsonSchemaVariantMap.fromJson(mapItem)).toList();
+    }
+  }
+
+  /** Create JSON Object for JsonSchemaVariant */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (discriminant != null) {
+      output["discriminant"] = discriminant;
+    }
+    if (map != null) {
+      output["map"] = map.map((mapItem) => mapItem.toJson()).toList();
+    }
+
+    return output;
+  }
+
+  /** Return String representation of JsonSchemaVariant */
+  core.String toString() => JSON.encode(this.toJson());
+
+}
+
+class JsonSchemaVariantMap {
+
+  core.String $ref;
+
+  core.String type_value;
+
+  /** Create new JsonSchemaVariantMap from JSON data */
+  JsonSchemaVariantMap.fromJson(core.Map json) {
+    if (json.containsKey("\$ref")) {
+      $ref = json["\$ref"];
+    }
+    if (json.containsKey("type_value")) {
+      type_value = json["type_value"];
+    }
+  }
+
+  /** Create JSON Object for JsonSchemaVariantMap */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if ($ref != null) {
+      output["\$ref"] = $ref;
+    }
+    if (type_value != null) {
+      output["type_value"] = type_value;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of JsonSchemaVariantMap */
   core.String toString() => JSON.encode(this.toJson());
 
 }

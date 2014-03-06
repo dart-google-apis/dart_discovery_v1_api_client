@@ -14,7 +14,7 @@ Adding dependency to pubspec.yaml
 
 ```
   dependencies:
-    google_discovery_v1_api: '>=0.4.11'
+    google_discovery_v1_api: '0.4.11-dev.0'
 ```
 
 For web applications:
